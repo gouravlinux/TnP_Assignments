@@ -24,7 +24,7 @@ import json
 
 def adminAdd():
     try:
-        with open("Admins.json", "r") as f:
+        with open("Admins.txt", "r") as f:
             adminData = json.load(f)
         if adminData == None:
             adminData = dict()
