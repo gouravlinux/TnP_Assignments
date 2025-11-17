@@ -1,0 +1,29 @@
+{
+    "sahil": {
+        "password": "passwd",
+        "name": "sahil khatri",
+        "course": "CSE",
+        "specialization": "CY",
+        "year": "3",
+        "sem": "5",
+        "address": "Madhurai",
+        "contact": "234324234",
+        "guardian": "manoj khatri",
+        "guardianContact": "234322332",
+        "Adhaar": "24432434343242",
+        "Scores": [
+            {
+                "category": "Python",
+                "marks": 2,
+                "total_marks": 5,
+                "timestamp": "21:35 31/10/2025"
+            },
+            {
+                "category": "DSA",
+                "marks": 4,
+                "total_marks": 5,
+                "timestamp": "21:36 31/10/2025"
+            }
+        ]
+    }
+}
