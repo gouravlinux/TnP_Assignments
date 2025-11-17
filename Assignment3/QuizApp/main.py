@@ -19,23 +19,22 @@ Quiz App with FILE HANDLING
 
 import login
 import registration
-import json
 
 
 def adminAdd():
     try:
         with open("Admins.txt", "r") as f:
-            adminData = json.load(f)
+            adminData = eval(f.read())
         if adminData == None:
             adminData = dict()
             adminData["admin"] = "admin123"
-        with open("Admins.json", "w") as f:
-            json.dump(adminData, f, indent=4)
+        with open("Admins.txt", "w") as f:
+            f.write(str(adminData))
     except FileNotFoundError:
         adminData = dict()
         adminData["admin"] = "admin123"
-        with open("Admins.json", "w") as f:
-            json.dump(adminData, f, indent=4)
+        with open("Admins.txt", "w") as f:
+            f.write(str(adminData))
 
 
 def main():

@@ -1,12 +1,9 @@
-import json  # JS Object Notation
-
-
 def userRegistration():
     print("Welcome to Registration Panel")
-    file_name = "Users.json"
+    file_name = "Users.txt"
     try:
         with open(file_name, "r") as f:
-            userData = json.load(f)
+            userData = eval(f.read())
     except FileNotFoundError:
         with open(file_name, "w") as f:  # creates an empty file
             userData = dict()
@@ -42,7 +39,7 @@ def userRegistration():
     userData[user]["Scores"] = list()
     print(f"\nThank you, {user}. Your account has been created.")
     with open(file_name, "w") as f:
-        json.dump(userData, f, indent=4)
+        f.write(str(userData))
     return
 
 

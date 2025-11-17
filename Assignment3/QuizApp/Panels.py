@@ -1,4 +1,3 @@
-import json
 import quiz
 import profile
 
@@ -14,10 +13,10 @@ def get_choice(prompt):
 
 def adminRegistration():
     print("Admin Registration Panel: ")
-    file_name = "Admins.json"
+    file_name = "Admins.txt"
     try:
         with open(file_name, "r") as f:
-            adminData = json.load(f)
+            adminData = eval(f.read())
     except FileNotFoundError:
         with open(file_name, "w") as f:
             adminData = dict()
@@ -40,7 +39,7 @@ def adminRegistration():
             print("Passwords didnot match. Please try again. ")
 
     with open(file_name, "w") as f:
-        json.dump(adminData, f, indent=4)
+        f.write(str(adminData))
 
     print("Admin Registration was successful!")
     return
@@ -48,10 +47,10 @@ def adminRegistration():
 
 def removeAdmin():
     admin = input("Enter the admin to be removed: ")
-    file_name = "Admins.json"
+    file_name = "Admins.txt"
     try:
         with open(file_name, "r") as f:
-            adminData = json.load(f)
+            adminData = eval(f.read())
     except FileNotFoundError:
         print("No admins Found!")
         return
@@ -61,17 +60,17 @@ def removeAdmin():
         return
     adminData.pop(admin)
     with open(file_name, "w") as f:
-        json.dump(adminData, f, indent=4)
+        f.write(str(adminData))
     print("Removal Successful!")
     return
 
 
 def removeUser():
     user = input("Enter the user to be removed: ")
-    file_name = "Users.json"
+    file_name = "Users.txt"
     try:
         with open(file_name, "r") as f:
-            userData = json.load(f)
+            userData = eval(f.read())
     except FileNotFoundError:
         print("No user found!")
         return
@@ -84,7 +83,7 @@ def removeUser():
     if x == "Y":
         userData.pop(user)
         with open(file_name, "w") as f:
-            json.dump(userData, f, indent=4)
+            f.write(str(userData))
         print("Removal Successful!")
     return
 

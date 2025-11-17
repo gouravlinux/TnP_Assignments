@@ -1,5 +1,4 @@
 import main
-import json
 import Panels
 
 
@@ -18,10 +17,12 @@ def verify_password(expected_password, passwd):
             print("Invalid password. Please enter again!")
 
 
-def load_json_file(filename):
+def load_file(filename):
     try:
         with open(filename, "r") as f:
-            return json.load(f)
+            # return json.load(f)
+            data = f.read()
+            return eval(data)
     except FileNotFoundError:
         return None
 
@@ -29,8 +30,8 @@ def load_json_file(filename):
 def adminLogin():
     print("Welcome to Admin Login Panel: ")
     user = input("Enter username: ")
-    file_name = "Admins.json"
-    adminData = load_json_file(file_name)
+    file_name = "Admins.txt"
+    adminData = load_file(file_name)
     if adminData == None:
         print(f"No {file_name} exists! Redirecting to main panel. ")
         main.main()
@@ -53,8 +54,8 @@ def adminLogin():
 def userLogin():
     print("Welcome to User Login Panel: ")
     user = input("Enter username: ")
-    file_name = "Users.json"
-    userData = load_json_file(file_name)
+    file_name = "Users.txt"
+    userData = load_file(file_name)
     if userData == None:
         print("No user found! Returning to main panel!")
         main.main()

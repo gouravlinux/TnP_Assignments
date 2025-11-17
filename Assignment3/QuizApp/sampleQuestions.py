@@ -234,13 +234,12 @@ sample_questions = {
 }
 
 
-# Optionally add a function to write this data to Quiz.json
-import json
+# Optionally add a function to write this data to Quiz.txt
 
 
-def save_sample_questions(filename="Quiz.json"):
+def save_sample_questions(filename="Quiz.txt"):
     with open(filename, "w") as f:
-        json.dump(sample_questions, f, indent=4)
+        f.write(str(sample_questions))
 
 
 if __name__ == "__main__":

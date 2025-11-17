@@ -1,0 +1,1 @@
+{'Manish': {'password': 'password', 'name': 'Manish Kumar', 'course': 'BTech', 'specialization': 'CSE-CY', 'year': '3', 'sem': '5', 'address': 'Bhopal', 'contact': '2343243443', 'guardian': 'Byomkesh Bakshi', 'guardianContact': '2343432423', 'Adhaar': '2343243244324', 'Scores': [{'category': 'DBMS', 'marks': 4, 'total_marks': 5, 'timestamp': '20:42 17/11/2025'}]}}

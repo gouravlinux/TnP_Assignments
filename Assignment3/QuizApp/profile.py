@@ -1,12 +1,11 @@
-import json
 from tabulate import tabulate
 
-file_name = "Users.json"
+file_name = "Users.txt"
 
 
 def scores(user):
     with open(file_name, "r") as f:
-        userData = json.load(f)
+        userData = eval(f.read())
     if user not in userData:
         print("You are not a user!")
         return
@@ -20,7 +19,7 @@ def scores(user):
 
 def showProfile(user):
     with open(file_name, "r") as f:
-        userData = json.load(f)
+        userData = eval(f.read())
     if user not in userData:
         print("You are not a user!")
         return
@@ -34,7 +33,7 @@ def showProfile(user):
 
 def editProfile(user):
     with open(file_name, "r") as f:
-        userData = json.load(f)
+        userData = eval(f.read())
     if userData[user] == dict():
         print("You don't have any data in your profile!")
         return
@@ -57,5 +56,5 @@ def editProfile(user):
         return
     elif x == "Y":
         with open(file_name, "w") as f:
-            json.dump(userData, f, indent=4)
+            f.write(str(userData))
     return
